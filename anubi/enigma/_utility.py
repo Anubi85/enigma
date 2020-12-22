@@ -5,16 +5,3 @@ def char2num(char):
 
 def num2char(num):
     return next(filter(lambda x: x[1] == num, __char_num))[0]
-
-class __staticproperty_descriptor():
-    def __init__(self, get):
-        self.__get = get
-    def __get__(self, obj, cls=None):
-        if cls is None:
-            cls = type(obj)
-        return self.__get.__get__(obj, cls)()
-
-def staticproperty(func):
-    if not isinstance(func, (classmethod, staticmethod)):
-        func = classmethod(func)
-    return __staticproperty_descriptor(func)

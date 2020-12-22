@@ -1,5 +1,4 @@
-from ._utility import num2char, char2num, staticproperty
-
+from ._utility import num2char, char2num
 class Rotor():
     __max_position = 26
     def __init__(self, right, left):
@@ -25,18 +24,3 @@ class Rotor():
         return self.__encode(pos, self.__right_to_left)
     def encode_left(self, pos):
         return self.__encode(pos, self.__left_to_right)
-    @staticproperty
-    def RotorTypeI(self):
-        return Rotor('QRSTUVWXYZABCDEFGHIJKLMNOP', 'XUSPAIBRCJEKMFLGDQVZNTOWYH')
-    @staticproperty
-    def RotorTypeII(self):
-        return Rotor('EFGHIJKLMNOPQRSTUVWXYZABCD', 'SIRUXBLHWTMCQGZNPYFVOEAJDK')
-    @staticproperty
-    def RotorTypeIII(self):
-        return Rotor('VWXYZABCDEFGHIJKLMNOPQRSTU', 'MUSQOBDFHJLCPRTXVZNYEIWGAK')
-    @staticproperty
-    def ReflectorB(self):
-        return Rotor('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'YRUHQSLDPXNGOKMIEBFZCWVJAT')
-    @staticproperty
-    def ReflectorC(self):
-        return Rotor('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'FVPJIAOYEDRZXWGCTKUQSBNMHL')
